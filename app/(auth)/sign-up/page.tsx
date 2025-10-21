@@ -6,6 +6,7 @@ import InputFields from '@/components/forms/InputFields'
 import SelectFields from '@/components/forms/SelectFields'
 import { Button } from '@/components/ui/button'
 import { INVESTMENT_GOALS } from '@/lib/constants'
+<<<<<<< HEAD
 import { useCallback } from 'react'
 import {useForm} from 'react-hook-form'
 
@@ -13,6 +14,17 @@ import {useForm} from 'react-hook-form'
 
 const SignUp = () => {
   const {
+=======
+import {useForm} from 'react-hook-form'
+import {useRouter} from "next/navigation";
+import {signUpWithEmail} from "@/lib/actions/auth.actions";
+import {toast} from "sonner";
+
+
+const SignUp = () => {
+    const router = useRouter()
+    const {
+>>>>>>> e9fe0f7 (auth logic with db and frontend logic)
     register,
     handleSubmit,
     control,
@@ -31,6 +43,7 @@ const SignUp = () => {
     mode:'onBlur'
   })
   
+<<<<<<< HEAD
   const onSubmit = async function name(data:SignUpFormData) {
     try {
       console.log(data)
@@ -38,6 +51,22 @@ const SignUp = () => {
       
     }
   }
+=======
+  const onSubmit = async function name(data:SignUpFormData)
+  {
+      try {
+          console.log(data);
+          const result = await signUpWithEmail(data);
+          if(result.success) router.push('/');
+      } catch (e) {
+          console.error(e);
+          toast.error('Sign up failed', {
+              description: e instanceof Error ? e.message : 'Failed to create an account.'
+          })
+      }
+  };
+
+>>>>>>> e9fe0f7 (auth logic with db and frontend logic)
 
   
   return (
@@ -56,7 +85,11 @@ const SignUp = () => {
         />
 
         <InputFields
+<<<<<<< HEAD
         name='Email'
+=======
+        name='email'
+>>>>>>> e9fe0f7 (auth logic with db and frontend logic)
         label="Email"
         placeholder="example@test.com"
         register={register}
@@ -67,6 +100,10 @@ const SignUp = () => {
         <InputFields
         name='password'
         label="Password"
+<<<<<<< HEAD
+=======
+        type="password"
+>>>>>>> e9fe0f7 (auth logic with db and frontend logic)
         placeholder="Enter a strong password"
         register={register}
         error={errors.password}
