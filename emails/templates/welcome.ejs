@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome to Signalist, <%= name %>!</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; padding: 0; }
+    .container { max-width: 600px; margin: 30px auto; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .header { background-color: #0077b6; padding: 20px; color: white; text-align: center; }
+    .body { padding: 20px; }
+    .cta { text-align: center; margin-top: 20px; }
+    .cta a { background-color: #0077b6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to Signalist, <%= name %>!</h1>
+    </div>
+    <div class="body">
+      <p>Hi <%= name %>,</p>
+      <p>Thank you for signing up, your trusted stock market companion!</p>
+      <p>Your details:</p>
+      <ul>
+        <li>Email: <%= email %></li>
+
+      </ul>
+      <div class="cta">
+        <a href="<%= baseUrl %>/">Go to Dashboard</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
